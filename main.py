@@ -14,6 +14,8 @@ client = commands.Bot(command_prefix = "nica!")
 frases = "frases.txt"
 token = os.environ.get('NicaBotKey')
 
+# this is just a test .) 
+
 print(token)
 
 @client.command()
