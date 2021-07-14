@@ -15,7 +15,7 @@ frases = "frases.txt"
 token = os.environ.get('NicaBotKey')
 
 # this is just a test .) 
-
+# same 
 print(token)
 
 @client.command()
