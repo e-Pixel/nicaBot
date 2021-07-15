@@ -50,19 +50,9 @@ async def frase(ctx):
         await ctx.send("No hay frases disponibles...")
 
 @client.command() 
-async def test(ctx): 
-    for i in range(10):
-        await ctx.send(i)
-        await asyncio.sleep(5)
-
-@client.command()
-async def entrar(ctx):
-    channel = ctx.author.voice.channel
-    await channel.connect()
-
-@client.command()
-async def salir(ctx):
-    await ctx.voice_client.disconnect()
+async def ping(ctx): 
+    ctx.send("Pong!")
+    
 
 @client.command()
 async def logout(ctx):
