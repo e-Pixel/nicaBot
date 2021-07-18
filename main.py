@@ -12,10 +12,8 @@ import re
 FFMPEG_OPTIONS = {'before_options': '-reconnect 1 -reconnect_streamed 1 -reconnect_delay_max 5','options': '-vn'}
 client = commands.Bot(command_prefix = "nica!")
 frases = "frases.txt"
-token = os.environ.get('NicaBotKey')
+token = os.environ.get('NicaBotKey') # To run bot (command at the bottom)
 
-# this is just a test .) 
-# same 
 print(token)
 
 @client.command()
