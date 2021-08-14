@@ -8,13 +8,23 @@ import pafy
 import asyncio
 import urllib3
 import re
+from discordTogether import DiscordTogether
 
 FFMPEG_OPTIONS = {'before_options': '-reconnect 1 -reconnect_streamed 1 -reconnect_delay_max 5','options': '-vn'}
 client = commands.Bot(command_prefix = "nica!")
 frases = "frases.txt"
 token = os.environ.get('NicaBotKey') # To run bot (command at the bottom)
+togetherControl = DiscordTogether(client)
 
 print(token)
+
+@client.command()
+async def startYT(ctx):
+    try:
+        link = await togetherControl.create_link(ctx.author.voice.channel.id, 'youtube')
+        await ctx.send(f"Cliquea el link azul!\n{link}")
+    except AttributeError:
+        await ctx.send("¡No estás en ningún canal de voz, entra a uno !")
 
 @client.command()
 async def getNumber(ctx):
